@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Morning message</title>
+  </head>
+  <body>
+    <button onclick="dateFunction(), timeFunction()">
+      Date and Time
+    </button>
+    <br />
+    <p id="date"></p>
+
+    <p id="time"></p>
+
+    <script>
+      function dateFunction() {
+        var today = new Date();
+
+        var date =
+          today.getMonth() +
+          1 +
+          "-" +
+          today.getDate() +
+          "-" +
+          today.getFullYear();
+
+        document.getElementById("date").innerHTML = date;
+      }
+
+      function timeFunction() {
+        var date = new Date();
+
+        var hour = date.getHours();
+
+        if (hour > 12 && hour <= 24) {
+          hour = hour - 12;
+        }
+
+        var time = hour + ":" + date.getMinutes();
+
+        document.getElementById("time").innerHTML = time;
+      }
+    </script>
+  </body>
+</html>
